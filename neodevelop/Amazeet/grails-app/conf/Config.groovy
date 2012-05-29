@@ -79,12 +79,12 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
     
-    debug 'grails.app.controllers',
-          'grails.app.taglib',
+    debug 'grails.app.controllers.com.synergyj',
+          'grails.app.taglib.com.synergyj',
           'grails.app.services.com.synergyj',
-          'grails.app.domain',
+          'grails.app.domain.com.synergyj',
           'grails.app.conf'
-    trace 'org.hibernate.SQL','org.hibernate.type'
+    //trace 'org.hibernate.SQL','org.hibernate.type'
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
