@@ -1,6 +1,8 @@
 package com.synergyj
 
 class StoreController {
+
+  def storeService
   
   def beforeInterceptor = {
     log.debug "Estoy en ${actionName} de ${controllerName}"
@@ -40,5 +42,10 @@ class StoreController {
     session.shoppingCart.items << item
     flash.message = "Has agregado un producto a tu carrito"
     redirect action:'index'
+  }
+
+  def doCheckout(){
+    storeService.serviceMethod()
+    redirect(action:'index')
   }
 }
