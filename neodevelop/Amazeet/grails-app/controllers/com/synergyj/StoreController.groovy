@@ -27,7 +27,10 @@ class StoreController {
   
   def addItemAsync = {
     log.debug "hola a las ${new Date()}"
-    render "hello world a las ${new Date()}"
+    def product = Product.get(params.long('productId'))
+    def item = new ItemToPurchase(product:product,quantity:params.int('quantity'))
+    session.shoppingCart.items << item
+    render template:'/store/myCart'
   }
   
   def addItem(){

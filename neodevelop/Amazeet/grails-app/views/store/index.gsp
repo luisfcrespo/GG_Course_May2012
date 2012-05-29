@@ -35,11 +35,11 @@
               <store:showProduct url="${p.urlImage}" size="small"/> 
             </td>
             <td>
-              <g:form action="addItem">
+              <g:formRemote url="[action:'addItemAsync']" name="addItemAsync" update="itemsInCart">
                 <g:hiddenField name="productId" value="${p.id}"/>
                 <g:select name="quantity" from="${1..9}" />
                 <g:submitButton name="submit" value="Agregar" />
-              </g:form>
+              </g:formRemote>
             </td>
           </tr>
         </g:each>
