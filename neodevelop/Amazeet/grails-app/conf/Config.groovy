@@ -84,6 +84,7 @@ log4j = {
           'grails.app.services.com.synergyj',
           'grails.app.domain',
           'grails.app.conf'
+    trace 'org.hibernate.SQL','org.hibernate.type'
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
