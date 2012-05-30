@@ -62,7 +62,7 @@ Released   : 20090918
 					</div>
 				</li>
 				<li>
-					<g:render template="/category/shortList" model="[categories:com.synergyj.Category.list()]" />
+					<g:render template="/category/shortList" model="[categories:com.synergyj.Category.list(cache:true)]" />
 				</li>
 			</ul>
 		</div>

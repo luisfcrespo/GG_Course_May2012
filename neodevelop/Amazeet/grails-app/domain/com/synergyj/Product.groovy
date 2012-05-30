@@ -17,6 +17,10 @@ class Product {
     log.debug "On Load de Product ${id}"
   }
 
+  static mapping = {
+    cache true
+  }
+
   static constraints = {
     name nullable:false,blank:false,size:3..50
     description nullable:false,blank:false,size:1..1000

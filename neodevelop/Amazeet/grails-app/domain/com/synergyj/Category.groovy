@@ -20,6 +20,10 @@ class Category {
     name(nullable:false,blank:false,size:3..50)
     description nullable:false,blank:false,size:1..1000,validator:this.descriptionValidator
   }
+
+  static mapping = {
+    cache true
+  }
   
   String toString(){
     name

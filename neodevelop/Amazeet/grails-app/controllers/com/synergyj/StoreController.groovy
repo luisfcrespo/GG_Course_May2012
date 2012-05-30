@@ -17,7 +17,7 @@ class StoreController {
 
   def index() {
     // Quiero mi catalogo de categorias para desplegar
-    def products = Product.list()
+    def products = Product.list(cache:true)
     [products:products]
   }
   
