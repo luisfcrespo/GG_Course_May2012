@@ -47,6 +47,8 @@ grails.project.dependency.resolution = {
         compile(":webflow:1.3.8"){
             excludes 'org.springframework.js','org.springframework.binding','org.springframework.webflow'
         }
+        compile ":quartz:1.0-RC2"
+        compile ":spring-security-core:1.2.7.3"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"
