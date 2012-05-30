@@ -12,7 +12,7 @@ Ya estas comprando en la tienda
 
 	<ul>
 	<g:each in="${session.shoppingCart.items}" var="item">
-	<li>${item.quantity}  ${item.product.name}</li>
+	<li>${item?.quantity}  ${item?.product?.name}</li>
 	</g:each>
 	</ul>
 	<br />
