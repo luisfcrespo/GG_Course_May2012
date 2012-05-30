@@ -12,7 +12,7 @@ grails.project.dependency.resolution = {
         // uncomment to disable ehcache
         // excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
 
     repositories {
@@ -34,6 +34,7 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
         runtime 'mysql:mysql-connector-java:5.1.16'
         compile 'org.springframework.webflow:spring-webflow:2.0.8.RELEASE','org.springframework.webflow:spring-binding:2.0.8.RELEASE','org.springframework.webflow:spring-js:2.0.8.RELEASE'
+        compile 'org.springframework:spring-jdbc:3.1.0.RELEASE'
     }
 
     plugins {

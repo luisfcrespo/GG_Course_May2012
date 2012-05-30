@@ -4,8 +4,13 @@ import grails.converters.*
 
 class ProductRestController {
 
+  def jdbcTemplate
+
   def show = {
     log.debug params
+    log.debug jdbcTemplate.dump()
+    def c = jdbcTemplate.queryForInt("select count(*) from product")
+    log.debug "$c items en la tabla"
     if(params.id && Product.exists(params.id)){
       def p = Product.get(params.id)
       render p as JSON
