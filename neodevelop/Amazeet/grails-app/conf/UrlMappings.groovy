@@ -10,7 +10,8 @@ class UrlMappings {
 		//"/mipropiaUrl"(controller:"product",action:"accion")
 
 		//"/"(view:"/index")
-		"/"(controller:"store")
+		"/"(controller:"store",action:'index')
+		"/checkoutMyCart"(controller:"store",action:"checkout")
 		"500"(view:'/error')
 	}
 }
