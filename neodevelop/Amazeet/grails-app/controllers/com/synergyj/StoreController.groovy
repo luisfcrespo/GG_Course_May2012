@@ -45,7 +45,6 @@ class StoreController {
   }
 
   def checkoutFlow = {
-
     showCart {
       onEntry{
         flow.totalItems = 0
@@ -64,13 +63,21 @@ class StoreController {
     }
     enterPersonalDetails {
       on("continueShopping").to "displayCatalog"
-      on("confirmOrder").to "confirmOrder"
+      on("confirmOrder").to "showInvoice"
       on("showCart").to "showCart"
     }
     cancelOrder {
      redirect(action:'dropShoppingCart') 
     }
-    showInvoice()
+    showInvoice(){
+      onStart{
+        flow.payment = storeService.saveShoppingCart(session.shoppingCart)
+      }
+      onEnd{
+        session.shoppingCart = new ShoppingCart(shoppingCartStatus:ShoppingCartStatus.SHOPPING)
+        session.shoppingCart.items = []
+      }
+    }
   }
 
   def dropShoppingCart(){
