@@ -44,8 +44,38 @@ class StoreController {
     redirect action:'index'
   }
 
-  def doCheckout(){
-    storeService.serviceMethod()
+  def checkoutFlow = {
+
+    showCart {
+      onEntry{
+        flow.totalItems = 0
+        flow.totalPrice = 0
+        session.shoppingCart.items.each { item ->
+          flow.totalItems += item.quantity
+          flow.totalPrice += (item.product.price * item.quantity)
+        }
+      }
+      on("checkoutThis").to "enterPersonalDetails"
+      on("continueShopping").to "displayCatalog"
+      on("cancelOrder").to "cancelOrder"
+    }
+    displayCatalog {
+      redirect(action:'index')
+    }
+    enterPersonalDetails {
+      on("continueShopping").to "displayCatalog"
+      on("confirmOrder").to "confirmOrder"
+      on("showCart").to "showCart"
+    }
+    cancelOrder {
+     redirect(action:'dropShoppingCart') 
+    }
+    showInvoice()
+  }
+
+  def dropShoppingCart(){
+    session.shoppingCart = new ShoppingCart(shoppingCartStatus:ShoppingCartStatus.SHOPPING)
+    session.shoppingCart.items = []
     redirect(action:'index')
   }
 }

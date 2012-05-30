@@ -4,9 +4,6 @@
     <title>Store</title>
     <meta name="layout" content="earthlingtwo" />
     <r:require modules="jquery"/>
-    <script>
-      
-    </script>
     <r:script>
       function startLoader(){
         $('img#loader').fadeIn(1000);
@@ -22,7 +19,7 @@
   </head>
   <body>
     <br/>
-    <g:link action="doCheckout">CHECKOUT</g:link>
+    <g:link action="checkout">CHECKOUT</g:link>
     <br/>
     <r:img uri="/images/spinner.gif" id="loader" style="display:none;"/>
     <div id="messageStatusOk" style="display:none;">
