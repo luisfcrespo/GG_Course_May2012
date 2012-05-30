@@ -4,14 +4,26 @@
     <title>Store</title>
     <meta name="layout" content="earthlingtwo" />
     <r:require modules="jquery"/>
+    <r:script>
+      function startLoader(){
+        $('img#loader').fadeIn(1000);
+      }
+      function stopLoader(){
+        $('img#loader').fadeOut(1000); 
+      }
+      function successEvent(data){
+        //alert(data);
+        $('#messageStatusOk').slideDown('slow').delay(2000).fadeOut();
+      }
+    </r:script>
   </head>
   <body>
-
     <br/>
-    <g:remoteLink action="addItemAsync" update="actualizame">
-      Hola mundo con Ajax
-    </g:remoteLink>
-    <div id="actualizame">
+    <g:link action="checkout">CHECKOUT</g:link>
+    <br/>
+    <r:img uri="/images/spinner.gif" id="loader" style="display:none;"/>
+    <div id="messageStatusOk" style="display:none;">
+      ${message(code:'item.added',default:'El item se ha añadido')}
     </div>
     <br/>
     
@@ -35,11 +47,11 @@
               <store:showProduct url="${p.urlImage}" size="small"/> 
             </td>
             <td>
-              <g:form action="addItem">
+              <g:formRemote url="[action:'addItemAsync']" name="addItemAsync" update="itemsInCart" onLoading="startLoader()" onComplete="stopLoader()" onSuccess="successEvent(data)">
                 <g:hiddenField name="productId" value="${p.id}"/>
                 <g:select name="quantity" from="${1..9}" />
                 <g:submitButton name="submit" value="Agregar" />
-              </g:form>
+              </g:formRemote>
             </td>
           </tr>
         </g:each>

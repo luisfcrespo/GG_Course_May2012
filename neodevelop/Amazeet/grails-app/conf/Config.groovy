@@ -79,11 +79,13 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
     
-    debug 'grails.app.controllers',
-          'grails.app.taglib',
+    debug 'grails.app.controllers.com.synergyj',
+          'grails.app.taglib.com.synergyj',
           'grails.app.services.com.synergyj',
-          'grails.app.domain',
-          'grails.app.conf'
+          'grails.app.domain.com.synergyj',
+          'grails.app.conf',
+          'grails.app.jobs'
+    //trace 'org.hibernate.SQL','org.hibernate.type'
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
@@ -97,3 +99,8 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.synergyj.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.synergyj.UserRole'
+grails.plugins.springsecurity.authority.className = 'com.synergyj.Role'

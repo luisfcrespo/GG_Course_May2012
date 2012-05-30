@@ -1,6 +1,6 @@
 package com.synergyj
 
-class ItemToPurchase {
+class ItemToPurchase implements Serializable {
 
   Product product
   Integer quantity

@@ -12,7 +12,7 @@ grails.project.dependency.resolution = {
         // uncomment to disable ehcache
         // excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
 
     repositories {
@@ -32,15 +32,27 @@ grails.project.dependency.resolution = {
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-
         runtime 'mysql:mysql-connector-java:5.1.16'
+        compile 'org.springframework.webflow:spring-webflow:2.0.8.RELEASE','org.springframework.webflow:spring-binding:2.0.8.RELEASE','org.springframework.webflow:spring-js:2.0.8.RELEASE'
+        compile 'org.springframework:spring-jdbc:3.1.0.RELEASE'
     }
 
     plugins {
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.1"
+        compile ":jquery-ui:1.8.15"
         runtime ":resources:1.1.6"
-
+        compile ":cache-headers:1.1.5"
+        runtime ":zipped-resources:1.0"
+        runtime ":cached-resources:1.0"
+        runtime ":yui-minify-resources:0.1.5"
+        compile(":webflow:1.3.8"){
+            excludes 'org.springframework.js','org.springframework.binding','org.springframework.webflow'
+        }
+        compile ":quartz:1.0-RC2"
+        compile ":spring-security-core:1.2.7.3"
+        compile ":spring-security-ui:0.2"
+        compile ":famfamfam:1.0.1"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"

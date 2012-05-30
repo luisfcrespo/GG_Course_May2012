@@ -1,6 +1,6 @@
 package com.synergyj
 
-class ShoppingCart {
+class ShoppingCart implements Serializable {
 
   //User user
   // No necesito este atributo por que esta

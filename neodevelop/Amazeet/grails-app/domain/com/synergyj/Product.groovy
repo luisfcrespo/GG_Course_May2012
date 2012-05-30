@@ -1,6 +1,6 @@
 package com.synergyj
 
-class Product {
+class Product implements Serializable {
   
   String name
   String description
@@ -12,6 +12,14 @@ class Product {
   Date lastUpdated
   
   //static belongsTo = [category:Category]
+
+  def onLoad(){
+    //log.debug "On Load de Product ${id}"
+  }
+
+  static mapping = {
+    cache true
+  }
 
   static constraints = {
     name nullable:false,blank:false,size:3..50

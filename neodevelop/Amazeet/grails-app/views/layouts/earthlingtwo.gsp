@@ -17,7 +17,7 @@ Released   : 20090918
 <title>
   . : SynergyJ.com - <g:layoutTitle default="Welcome"/> : .
 </title>
-<link href="${createLinkTo(dir:'earthlingtwo',file:'style.css')}" rel="stylesheet" type="text/css" media="screen" />
+<r:require modules="earthlingtwo"/>
 <g:layoutHead/>
 <r:layoutResources/>
 </head>
@@ -57,12 +57,12 @@ Released   : 20090918
 		<div id="sidebar">
 			<ul>
 				<li>
+					<div id="itemsInCart">
 					 <g:render template="/store/myCart"/>
+					</div>
 				</li>
 				<li>
-					
-					<g:render template="/category/shortList" model="[categories:com.synergyj.Category.list()]" />
-					
+					<g:render template="/category/shortList" model="[categories:com.synergyj.Category.list(cache:true)]" />
 				</li>
 			</ul>
 		</div>
