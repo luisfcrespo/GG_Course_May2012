@@ -1,6 +1,6 @@
 package com.synergyj
 
-class ShoppingCartOrder {
+class ShoppingCartOrder implements Serializable {
 
   //ShoppingCart shoppingCart
   ShoppingCartOrderStatus shoppingCartOrderStatus

@@ -1,6 +1,6 @@
 package com.synergyj
 
-class Payment {
+class Payment implements Serializable {
 
   BigDecimal amount
   BigDecimal commission

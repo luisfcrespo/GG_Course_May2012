@@ -1,6 +1,6 @@
 package com.synergyj
 
-class Product {
+class Product implements Serializable {
   
   String name
   String description
