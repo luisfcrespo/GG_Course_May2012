@@ -13,6 +13,10 @@ class Product {
   
   //static belongsTo = [category:Category]
 
+  def onLoad(){
+    log.debug "On Load de Product ${id}"
+  }
+
   static constraints = {
     name nullable:false,blank:false,size:3..50
     description nullable:false,blank:false,size:1..1000
