@@ -24,7 +24,7 @@
     <br/>
     <g:link action="doCheckout">CHECKOUT</g:link>
     <br/>
-    <img id="loader" src="${createLinkTo(dir:'images',file:'spinner.gif')}" style="display:none;">
+    <r:img uri="/images/spinner.gif" id="loader" style="display:none;"/>
     <div id="messageStatusOk" style="display:none;">
       ${message(code:'item.added',default:'El item se ha añadido')}
     </div>

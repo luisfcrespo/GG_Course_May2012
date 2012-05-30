@@ -14,7 +14,7 @@ class Product {
   //static belongsTo = [category:Category]
 
   def onLoad(){
-    log.debug "On Load de Product ${id}"
+    //log.debug "On Load de Product ${id}"
   }
 
   static mapping = {

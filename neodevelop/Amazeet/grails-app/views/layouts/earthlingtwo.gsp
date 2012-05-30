@@ -17,7 +17,7 @@ Released   : 20090918
 <title>
   . : SynergyJ.com - <g:layoutTitle default="Welcome"/> : .
 </title>
-<link href="${createLinkTo(dir:'earthlingtwo',file:'style.css')}" rel="stylesheet" type="text/css" media="screen" />
+<r:require modules="earthlingtwo"/>
 <g:layoutHead/>
 <r:layoutResources/>
 </head>

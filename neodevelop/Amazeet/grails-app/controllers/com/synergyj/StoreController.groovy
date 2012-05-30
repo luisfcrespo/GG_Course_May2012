@@ -32,7 +32,7 @@ class StoreController {
     def product = Product.get(params.long('productId'))
     def item = new ItemToPurchase(product:product,quantity:params.int('quantity'))
     session.shoppingCart.items << item
-    Thread.sleep(3000)
+    //Thread.sleep(3000)
     render template:'/store/myCart'
   }
   
