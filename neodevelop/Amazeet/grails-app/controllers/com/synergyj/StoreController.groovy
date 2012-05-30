@@ -70,7 +70,7 @@ class StoreController {
      redirect(action:'dropShoppingCart') 
     }
     showInvoice(){
-      onStart{
+      onEntry{
         flow.payment = storeService.saveShoppingCart(session.shoppingCart)
       }
       onEnd{
