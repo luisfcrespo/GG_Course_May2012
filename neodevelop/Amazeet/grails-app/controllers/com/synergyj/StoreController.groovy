@@ -1,5 +1,7 @@
 package com.synergyj
 
+import grails.plugins.springsecurity.Secured
+
 class StoreController {
 
   def storeService
@@ -44,6 +46,7 @@ class StoreController {
     redirect action:'index'
   }
 
+  @Secured(['ROLE_USER'])
   def checkoutFlow = {
     showCart {
       onEntry{

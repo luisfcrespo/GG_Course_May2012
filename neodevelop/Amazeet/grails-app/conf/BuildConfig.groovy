@@ -39,6 +39,7 @@ grails.project.dependency.resolution = {
     plugins {
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.1"
+        compile ":jquery-ui:1.8.15"
         runtime ":resources:1.1.6"
         compile ":cache-headers:1.1.5"
         runtime ":zipped-resources:1.0"
@@ -49,6 +50,8 @@ grails.project.dependency.resolution = {
         }
         compile ":quartz:1.0-RC2"
         compile ":spring-security-core:1.2.7.3"
+        compile ":spring-security-ui:0.2"
+        compile ":famfamfam:1.0.1"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"
