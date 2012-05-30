@@ -79,8 +79,8 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 	
-	debug 'grails.app.controllers',
-		  'grails.app.taglib',
+	debug 'grails.app.controllers.com.synergyj',
+		  'grails.app.taglib.com.synergyj',
 		  'grails.app.services.com.synergyj',
 		  'grails.app.domain',
 		  'grails.app.conf'
